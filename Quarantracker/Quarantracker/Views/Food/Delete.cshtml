@@ -1,0 +1,48 @@
+﻿@model Quarantracker.Models.Food
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Food</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Course)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MakeAgain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MakeAgain)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
